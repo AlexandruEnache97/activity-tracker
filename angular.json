@@ -30,6 +30,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/activity-tracker/",
               "budgets": [
                 {
                   "type": "initial",
