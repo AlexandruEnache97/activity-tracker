@@ -1,0 +1,6 @@
+@media screen and (max-width: 650px) {
+  button {
+    font-size: 0.75rem;
+    padding: 0.3rem;
+  }
+}
