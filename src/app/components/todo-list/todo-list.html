@@ -1,0 +1,23 @@
+<section class="todo-card" aria-labelledby="todo-title">
+  <header class="todo-heading">
+    <div>
+      <p class="eyebrow">YOUR DAY</p>
+      <h1 id="todo-title">To-do list</h1>
+    </div>
+    <span class="progress">{{ completedCount() }} of {{ items().length }} done</span>
+  </header>
+
+  <ul class="todo-items">
+    @for (item of items(); track item.id) {
+      <li class="todo-item">
+        <span class="todo-label" [class.completed]="item.completed">{{ item.title }}</span>
+        <input
+          type="checkbox"
+          [checked]="item.completed"
+          [attr.aria-label]="'Mark ' + item.title + ' as ' + (item.completed ? 'incomplete' : 'complete')"
+          (change)="toggleItem(item.id)"
+        />
+      </li>
+    }
+  </ul>
+</section>

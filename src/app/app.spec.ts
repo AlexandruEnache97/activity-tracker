@@ -15,10 +15,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the to-do list', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, TaskTracker');
+    expect(compiled.querySelector('app-todo-list h1')?.textContent).toContain('To-do list');
+    expect(compiled.querySelectorAll('app-todo-list input[type="checkbox"]').length).toBe(3);
   });
 });
