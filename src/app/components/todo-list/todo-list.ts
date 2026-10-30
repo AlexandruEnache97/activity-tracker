@@ -1,21 +1,20 @@
 import { Component, computed, signal } from '@angular/core';
 
-interface TodoItem {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import { TodoItem } from '../../types/todo-list-types';
+import { Button } from '../button/button';
 
 @Component({
   selector: 'app-todo-list',
   styleUrl: './todo-list.css',
   templateUrl: './todo-list.html',
+  imports: [Button],
 })
 export class TodoList {
   protected readonly items = signal<TodoItem[]>([
     { id: 1, title: "Review today's priorities", completed: false },
     { id: 2, title: 'Finish the current task', completed: false },
-    { id: 3, title: 'Take a short break', completed: true },
+    { id: 3, title: 'Take a short break', completed: false },
+    { id: 4, title: 'Review the project timeline', completed: false },
   ]);
   protected readonly completedCount = computed(
     () => this.items().filter((item) => item.completed).length,
