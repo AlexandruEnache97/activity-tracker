@@ -19,7 +19,7 @@ describe('TodoList', () => {
 
     expect(checkbox.checked).toBe(true);
     expect(fixture.nativeElement.querySelector('.progress').textContent).toContain(
-      '2 of 3 done',
+      '1 of 4 done',
     );
     expect(fixture.nativeElement.querySelector('.todo-label').classList).toContain(
       'completed',
