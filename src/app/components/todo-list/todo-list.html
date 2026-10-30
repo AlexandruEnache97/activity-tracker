@@ -6,7 +6,7 @@
     </div>
     <div class="flex flex-col items-end gap-3">
       <span class="progress">{{ completedCount() }} of {{ items().length }} done</span>
-      <app-button class="-mr-1" text="Add New Item"></app-button>
+      <app-button class="-mr-1" text="Add New Item" (onClick)="toggleAddNewItemModal()"></app-button>
     </div>
   </header>
 
@@ -20,4 +20,7 @@
     </li>
     }
   </ul>
+  @if (addModalOpened()) {
+  <app-add-todo-modal (onCloseModal)="closeAddNewItemModal()"></app-add-todo-modal>
+  }
 </section>

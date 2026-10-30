@@ -20,6 +20,6 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('app-todo-list h1')?.textContent).toContain('To-do list');
-    expect(compiled.querySelectorAll('app-todo-list input[type="checkbox"]').length).toBe(3);
+    expect(compiled.querySelectorAll('app-todo-list input[type="checkbox"]').length).toBe(4);
   });
 });

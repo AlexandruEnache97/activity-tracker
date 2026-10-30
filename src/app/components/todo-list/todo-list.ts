@@ -2,12 +2,13 @@ import { Component, computed, signal } from '@angular/core';
 
 import { TodoItem } from '../../types/todo-list-types';
 import { Button } from '../button/button';
+import { AddTodoModal } from '../add-todo-modal/add-todo-modal';
 
 @Component({
   selector: 'app-todo-list',
   styleUrl: './todo-list.css',
   templateUrl: './todo-list.html',
-  imports: [Button],
+  imports: [Button, AddTodoModal],
 })
 export class TodoList {
   protected readonly items = signal<TodoItem[]>([
@@ -16,6 +17,8 @@ export class TodoList {
     { id: 3, title: 'Take a short break', completed: false },
     { id: 4, title: 'Review the project timeline', completed: false },
   ]);
+  protected addModalOpened = signal<boolean>(false);
+
   protected readonly completedCount = computed(
     () => this.items().filter((item) => item.completed).length,
   );
@@ -26,5 +29,13 @@ export class TodoList {
         item.id === id ? { ...item, completed: !item.completed } : item,
       ),
     );
+  }
+
+  protected toggleAddNewItemModal(): void {
+    this.addModalOpened.set(!this.addModalOpened());
+  }
+
+  protected closeAddNewItemModal(): void {
+    this.addModalOpened.set(false);
   }
 }
