@@ -6,10 +6,6 @@
 
 .todo-card {
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 12px 32px rgb(15 23 42 / 6%);
 }
 
 .todo-heading {
@@ -17,8 +13,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 1.5rem 0.5rem;
 }
 
 .eyebrow {
@@ -44,7 +39,6 @@ h1 {
 
 .todo-items {
   margin: 0;
-  padding: 0 1.5rem;
   list-style: none;
 }
 
@@ -54,7 +48,9 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid #f1f5f9;
+  background-color: white;
+  padding: 0 1.5rem;
+  margin: 1rem 0;
 }
 
 .todo-item:last-child {
